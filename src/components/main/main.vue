@@ -103,6 +103,7 @@ export default {
         window.open(name.split('_')[1])
         return
       }
+
       this.$router.push({
         name,
         params,

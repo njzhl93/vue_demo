@@ -3,13 +3,13 @@
     <div class="select-item">
       <span>项目</span>
       <Select v-model="selectedProject" class="project-search-col search-col" @on-change="changeProject">
-        <Option v-for="project in projects" :value="project">{{ project }}</Option>
+        <Option v-for="(project, index) in projects" :value="project" :key="index">{{ project }}</Option>
       </Select>
     </div>
     <div v-if="get_months" class="select-item">
       <span>月份</span>
       <Select v-model="selectedMonth" class="month-search-col search-col" @on-change="changeProject">
-        <Option v-for="month in months" :value="month">{{ month }}</Option>
+        <Option v-for="(month, index) in months" :value="month" :key="index">{{ month }}</Option>
       </Select>
     </div>
   </div>

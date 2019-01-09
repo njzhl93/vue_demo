@@ -27,6 +27,19 @@ export const hasOneOf = (targetarr, arr) => {
 }
 
 /**
+ * @param {String|Number} value 要验证的字符串或数值
+ * @param {*} validList 用来验证的列表
+ */
+export function oneOf (value, validList) {
+  for (let i = 0; i < validList.length; i++) {
+    if (value === validList[i]) {
+      return true
+    }
+  }
+  return false
+}
+
+/**
  * @param {*} obj1 对象
  * @param {*} obj2 对象
  * @description 判断两个对象是否相等，这两个对象的值只能是数字或字符串

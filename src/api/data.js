@@ -59,3 +59,41 @@ export const getDbInfoData = (project, month, type) => {
     method: 'get'
   })
 }
+
+export const getUtilizationIndexData = () => {
+  return axios.request({
+    url: '/v1/utilization_index',
+    method: 'get'
+  })
+}
+
+export const getUtilizationData = (project, month, type) => {
+  return axios.request({
+    url: '/v1/get_utilization',
+    params: {'project': project, 'month': month, 'type': type},
+    method: 'get'
+  })
+}
+
+export const getSummaryIndexData = () => {
+  return axios.request({
+    url: '/v1/summary_index',
+    method: 'get'
+  })
+}
+
+export const getSummaryData = (project, month) => {
+  return axios.request({
+    url: '/v1/get_summary',
+    params: {'project': project, 'month': month},
+    method: 'get'
+  })
+}
+
+export const updateSummaryData = data => {
+  return axios.request({
+    url: '/v1/update_summary',
+    data: data,
+    method: 'post'
+  })
+}

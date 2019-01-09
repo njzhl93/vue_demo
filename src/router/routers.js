@@ -2,11 +2,6 @@ import HelloWorld from '@/components/HelloWorld'
 import Main from '@/components/main'
 
 export default [
-  // {
-  //   path: '/',
-  //   name: 'HelloWorld',
-  //   component: HelloWorld
-  // },
   {
     path: '/login',
     name: 'login',
@@ -116,6 +111,55 @@ export default [
           // beforeCloseName: 'before_close_normal'
         },
         component: () => import('@/view/db-info/db-info.vue')
+      }
+    ]
+  },
+  {
+    path: '/utilization',
+    name: '_utilization',
+    meta: {
+      hideInBread: true
+    },
+    component: Main,
+    children: [
+      {
+        path: '/utilization_page',
+        name: 'utilization_page',
+        meta: {
+          icon: 'md-grid',
+          title: '监控信息',
+          // beforeCloseName: 'before_close_normal'
+        },
+        component: () => import('@/view/utilization/utilization.vue')
+      }
+    ]
+  },
+  {
+    path: '/summary',
+    name: '_summary',
+    meta: {
+      hideInBread: true
+    },
+    component: Main,
+    children: [
+      {
+        path: '/summary_page',
+        name: '_summary_page',
+        meta: {
+          icon: 'md-grid',
+          title: '建议总结',
+          // beforeCloseName: 'before_close_normal'
+        },
+        component: () => import('@/view/summary/summary.vue')
+      },
+      {
+        path: '/summary_write',
+        name: '_summary_write',
+        meta: {
+          hideInMenu: true,
+          title: '填写总结'
+        },
+        component: () => import('@/view/summary/summary_write.vue')
       }
     ]
   },

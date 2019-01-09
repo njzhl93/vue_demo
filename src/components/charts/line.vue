@@ -34,11 +34,20 @@
     },
     watch: {
       value (val) {
+        this.dom.hideLoading()
         this.dom.setOption({
           title: {
             text: this.text
           },
-          tooltip: {},
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'cross',
+              label: {
+                backgroundColor: '#6a7985'
+              }
+            }
+          },
           grid: {
             right: '25%'
           },
@@ -86,7 +95,6 @@
           },
           series: this.value
         }, true)
-        this.dom.hideLoading()
       }
     },
     beforeDestroy () {
