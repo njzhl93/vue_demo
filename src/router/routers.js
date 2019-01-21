@@ -163,4 +163,13 @@ export default [
       }
     ]
   },
+  {
+    path: '/report',
+    name: 'report',
+    meta: {
+      title: '月报',
+      hideInMenu: true
+    },
+    component: () => import('@/view/report/report.vue')
+  },
 ]

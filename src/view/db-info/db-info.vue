@@ -3,16 +3,16 @@
     <project-select-bar get_months :projects="projects" :months="months" @projectChange="changeChart"></project-select-bar>
     <i-col :md="24" :lg="16" style="margin-bottom: 20px;">
       <Card shadow>
-        <chart-line style="height: 300px;" id="slow-queries-chart" v-model="slowQueriesData" :legends="slowQueriesLegend" :label="slowQueriesLabel" text="慢查询数"/>
+        <chart-line style="height: 300px;" id="slow-queries-chart" v-model="slowQueriesData" hasDataZoom :legends="slowQueriesLegend" :label="slowQueriesLabel" text="慢查询数"/>
       </Card>
       <Card shadow>
-        <chart-line style="height: 300px;" id="threads-connected-chart" v-model="connectLineData" :legends="connectLegend" :label="connectLabel" text="连接数"/>
+        <chart-line style="height: 300px;" id="threads-connected-chart" v-model="connectLineData" hasDataZoom :legends="connectLegend" :label="connectLabel" text="连接数"/>
       </Card>
       <Card shadow>
-        <chart-line style="height: 300px;" id="tps-chart" v-model="tpsData" :legends="tpsLegend" :label="tpsLabel" text="tps"/>
+        <chart-line style="height: 300px;" id="tps-chart" v-model="tpsData" hasDataZoom :legends="tpsLegend" :label="tpsLabel" text="tps"/>
       </Card>
       <Card shadow>
-        <chart-line style="height: 300px;" id="qps-chart" v-model="qpsData" :legends="qpsLegend" :label="qpsLabel" text="qps"/>
+        <chart-line style="height: 300px;" id="qps-chart" v-model="qpsData" hasDataZoom :legends="qpsLegend" :label="qpsLabel" text="qps"/>
       </Card>
     </i-col>
   </div>

@@ -3,19 +3,19 @@
     <project-select-bar get_months :projects="projects" :months="months" @projectChange="changeChart"></project-select-bar>
     <i-col :md="24" :lg="16" style="margin-bottom: 20px;">
       <Card shadow>
-        <chart-line style="height: 300px;" id="cpu-chart" v-model="cpuData" :legends="cpuLegend" :label="cpuLabel" text="CPU使用量"/>
+        <chart-line style="height: 300px;" id="cpu-chart" v-model="cpuData" hasDataZoom :legends="cpuLegend" :label="cpuLabel" text="CPU使用量"/>
       </Card>
       <Card shadow>
-        <chart-line style="height: 300px;" id="men-chart" v-model="menData" :legends="menLegend" :label="menLabel" text="内存使用量"/>
+        <chart-line style="height: 300px;" id="men-chart" v-model="menData" hasDataZoom :legends="menLegend" :label="menLabel" text="内存使用量"/>
       </Card>
       <Card shadow>
-        <chart-line style="height: 300px;" id="disk-chart" v-model="diskData" :legends="diskLegend" :label="diskLabel" text="硬盘使用量"/>
+        <chart-line style="height: 300px;" id="disk-chart" v-model="diskData" hasDataZoom :legends="diskLegend" :label="diskLabel" text="硬盘使用量"/>
       </Card>
       <Card shadow>
-        <chart-line style="height: 300px;" id="net-out-chart" v-model="netoutData" :legends="netoutLegend" :label="netoutLabel" text="流出宽带"/>
+        <chart-line style="height: 300px;" id="net-out-chart" v-model="netoutData" hasDataZoom :legends="netoutLegend" :label="netoutLabel" text="流出宽带"/>
       </Card>
       <Card shadow>
-        <chart-line style="height: 300px;" id="net-in-chart" v-model="netinData" :legends="netinLegend" :label="netinLabel" text="流入宽带"/>
+        <chart-line style="height: 300px;" id="net-in-chart" v-model="netinData" hasDataZoom :legends="netinLegend" :label="netinLabel" text="流入宽带"/>
       </Card>
     </i-col>
   </div>

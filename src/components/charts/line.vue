@@ -14,6 +14,10 @@
       text: String,
       subtext: String,
       label: String,
+      hasDataZoom: {
+        type: Boolean,
+        default: false
+      }
     },
     data () {
       return {
@@ -35,7 +39,7 @@
     watch: {
       value (val) {
         this.dom.hideLoading()
-        this.dom.setOption({
+        let option = {
           title: {
             text: this.text
           },
@@ -51,7 +55,27 @@
           grid: {
             right: '25%'
           },
-          dataZoom: [
+          xAxis: {
+            type: 'time'
+          },
+          yAxis: {
+            type: 'value',
+            axisLabel: {
+              formatter: '{value} ' + this.label
+            }
+          },
+          legend: {
+            data: this.legend,
+            type: 'scroll',
+            orient: 'vertical',
+            left: 'right',
+            top: 20,
+            bottom: 20
+          },
+          series: this.value
+        }
+        if (this.hasDataZoom) {
+          option['dataZoom'] = [
             {
               type: 'slider',
               show: true,
@@ -75,26 +99,9 @@
               yAxisIndex: [0],
               start: 0,
             }
-          ],
-          xAxis: {
-            type: 'time'
-          },
-          yAxis: {
-            type: 'value',
-            axisLabel: {
-              formatter: '{value} ' + this.label
-            }
-          },
-          legend: {
-            data: this.legend,
-            type: 'scroll',
-            orient: 'vertical',
-            left: 'right',
-            top: 20,
-            bottom: 20
-          },
-          series: this.value
-        }, true)
+          ]
+        }
+        this.dom.setOption(option, true)
       }
     },
     beforeDestroy () {

@@ -117,14 +117,10 @@
           }
         })
       },
-      handleChange (html, text) {
-        console.log(html, text)
-      }
     },
     mounted () {
       this.project = this.$route.query.project
       this.month = this.$route.query.month
-      this.dbCheck = 'aabbdd'
       getSummaryData(this.project, this.month).then(res => {
         let summary = res.data.summary_data
         this.assetsHead = summary.assets_head
